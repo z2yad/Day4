@@ -2,10 +2,12 @@ const express = require("express");
 const app = express();
 const port = 3000;
 
-app.get('/', (req, res) => {
-    res.send("hello world")
-})
+
+//call route to server
+const WeatherRoutes = require("./routes/WeatherRoutes");
+
+app.use("/api/weather", WeatherRoutes);
 
 app.listen(port, () => {
-    console.log(`server is running at ${port}`)
+  console.log(`server is running at ${port}`);
 });
