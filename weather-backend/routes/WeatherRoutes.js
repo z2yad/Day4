@@ -1,10 +1,10 @@
 const express = require("express");
-const route = express.Router();
+const Router = express.Router();
 
-route.get("/", (req, res) => {
+Router.get("/", (req, res) => {
   res.json({
     message: "Welcome to the weather API",
   });
 });
 
-module.exports = route;
+module.exports = Router;
