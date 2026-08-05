@@ -1,10 +1,12 @@
-const getWeather = async () =>{
-    return {
-        city:"cairo",
-        temperature:30,
-        huminty:60
-    }
+const WeatherApiClient = require("../clients/WeatherApiClient");
+
+const getWeather = async () => {
+    const weatherData = await WeatherApiClient.getCurrentWeather();
+
+    return weatherData;
 }
+
+
 module.exports = {
     getWeather
 }
