@@ -32,8 +32,19 @@ const gethourly = async () => {
     const hourlyData = await WeatherApiClient.gethourly();
     return hourlyData;
 }
+
+const SunriseAndSunset = async () => {
+    const sunriseAndSunsetData = await WeatherApiClient.SunriseAndSunset();
+    const { daily } = sunriseAndSunsetData;
+    return {
+        sunrise: daily.sunrise[0],
+        sunset: daily.sunset[0]
+    };
+}
+
 module.exports = {
     getCurrentWeather,
     getForecast,
-    gethourly
+    gethourly,
+    SunriseAndSunset
 }

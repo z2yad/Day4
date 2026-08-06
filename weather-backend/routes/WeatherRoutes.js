@@ -6,4 +6,5 @@ const WeatherController = require("../controller/weatherController");
 Router.get("/", WeatherController.getCurrentWeather);
 Router.get("/forecast", WeatherController.getForecast);
 Router.get("/hourly", WeatherController.gethourly);
+Router.get("/SunriseAndSunset", WeatherController.SunriseAndSunset);
 module.exports = Router;
