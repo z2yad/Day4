@@ -7,4 +7,5 @@ Router.get("/", WeatherController.getCurrentWeather);
 Router.get("/forecast", WeatherController.getForecast);
 Router.get("/hourly", WeatherController.gethourly);
 Router.get("/SunriseAndSunset", WeatherController.SunriseAndSunset);
+Router.get("/precipitation", WeatherController.precipitationData);
 module.exports = Router;

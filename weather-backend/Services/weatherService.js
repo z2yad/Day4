@@ -41,10 +41,16 @@ const SunriseAndSunset = async () => {
         sunset: daily.sunset[0]
     };
 }
-
+const precipitationData = async () => {
+    const precipitation = await WeatherApiClient.getPrecipitation();
+    return {
+        precipitation: precipitation.daily.precipitation_sum[0]
+    };
+}
 module.exports = {
     getCurrentWeather,
     getForecast,
     gethourly,
-    SunriseAndSunset
+    SunriseAndSunset,
+    precipitationData
 }

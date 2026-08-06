@@ -98,5 +98,6 @@ module.exports = {
     getCurrentWeather,
     getForecast,
     gethourly,
-    SunriseAndSunset
+    SunriseAndSunset,
+    getPrecipitation
 };

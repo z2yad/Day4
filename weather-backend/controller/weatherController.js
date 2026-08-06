@@ -19,10 +19,15 @@ const SunriseAndSunset = async (req, res) => {
   const sunriseAndSunset = await WetherService.SunriseAndSunset();
   res.json(sunriseAndSunset);
 }
+const precipitationData = async (req, res) => {
+  const precipitation = await WetherService.precipitationData();
+  res.json(precipitation);
+}
 
 module.exports = {
   getCurrentWeather,
   getForecast,
   gethourly,
-  SunriseAndSunset
+  SunriseAndSunset,
+  precipitationData
 }
