@@ -28,7 +28,12 @@ const getForecast = async () => {
     }
     return forecast;
 }
+const gethourly = async () => {
+    const hourlyData = await WeatherApiClient.gethourly();
+    return hourlyData;
+}
 module.exports = {
     getCurrentWeather,
-    getForecast
+    getForecast,
+    gethourly
 }

@@ -1,17 +1,23 @@
 const WetherService = require("../Services/weatherService");
 
-const getCurrentWeather = async (req,res) =>{
-    const data = await WetherService.getCurrentWeather();
-    
+const getCurrentWeather = async (req, res) => {
+  const data = await WetherService.getCurrentWeather();
+
   res.json(data);
 }
-const getForecast = async (req,res) =>{
+const getForecast = async (req, res) => {
   const forecast = await WetherService.getForecast();
-  
-res.json(forecast);
+
+  res.json(forecast);
+}
+const gethourly = async (req, res) => {
+const hourly = await WetherService.gethourly();
+
+res.json(hourly);
 }
 
 module.exports = {
-    getCurrentWeather,
-    getForecast
+  getCurrentWeather,
+  getForecast,
+  gethourly
 }

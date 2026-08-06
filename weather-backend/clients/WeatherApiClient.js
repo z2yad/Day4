@@ -32,8 +32,27 @@ const getForecast = async () => {
     }
     return response.data;
 }
+//hourly
 
+const gethourly = async () => {
+    const response = await axios.get(
+        "https://api.open-meteo.com/v1/forecast",
+        {
+            params: {
+                latitude: 30.0444,
+                longitude: 31.2357,
+                hourly: "time,temperature_2m"
+            }
+        }
+
+    )
+    if (response.status !== 200) {
+        throw new Error(`API Error: ${response.statusText}`);
+    }
+    return response.data;
+}
 module.exports = {
-   getCurrentWeather,
-    getForecast
+    getCurrentWeather,
+    getForecast,
+    gethourly
 };
