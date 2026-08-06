@@ -8,6 +8,7 @@ const WeatherRoutes = require("./routes/WeatherRoutes");
 
 app.use("/api/weather", WeatherRoutes);
 
+
 app.listen(port, () => {
   console.log(`server is running at ${port}`);
 });
