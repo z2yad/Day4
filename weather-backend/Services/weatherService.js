@@ -14,7 +14,7 @@ const getCurrentWeather = async () => {
 //forecast Data
 const getForecast = async () => {
     const forecastData = await WeatherApiClient.getForecast();
-
+    debugger;
     const { daily } = forecastData;
 
     const forecast = [];
