@@ -14,8 +14,8 @@ const getCurrentWeather = async () => {
         )
         return response.data;
     } catch (err) {
-        console.log(err);
-    }
+    throw new Error("Failed to fetch current weather");
+}
 }
 const getForecast = async () => {
     try {
@@ -31,7 +31,7 @@ const getForecast = async () => {
         )
         return response.data;
     } catch (err) {
-        console.log(err);
+        throw new Error("Failed to fetch daily weather");
     }
 }
 //hourly
@@ -44,7 +44,7 @@ const gethourly = async () => {
                 params: {
                     latitude: 30.0444,
                     longitude: 31.2357,
-                    hourly: "time,temperature_2m"
+                    hourly: "temperature_2m"
                 }
             }
 
@@ -52,7 +52,7 @@ const gethourly = async () => {
 
         return response.data;
     } catch (err) {
-        console.log(err);
+        throw new Error("Failed to fetch hourly weather");
     }
 }
 module.exports = {
