@@ -6,9 +6,9 @@ const getCurrentWeather = async (req,res) =>{
   res.json(data);
 }
 const getForecast = async (req,res) =>{
-  const data = await WetherService.getForecast();
+  const forecast = await WetherService.getForecast();
   
-res.json(data);
+res.json(forecast);
 }
 
 module.exports = {
