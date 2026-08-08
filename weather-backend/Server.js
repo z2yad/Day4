@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require("express");
 const app = express();
 
-const port = 3000;
+const port = process.env.PORT || 3000;
 
 
 //call route to server
@@ -13,5 +13,5 @@ app.use("/api/weather", WeatherRoutes);
 
 
 app.listen(port, () => {
-  console.log(`server is running at ${port}`);
+  console.log(`server is running http://localhost:${port}`);
 });
