@@ -1,6 +1,6 @@
 const WeatherApiClient = require("../clients/WeatherApiClient");
 
-const getCurrentWeather = async () => {
+const getCurrentWeather = async (latitude, longitude) => {
     const weatherData = await WeatherApiClient.getCurrentWeather();
 
     return {
@@ -12,7 +12,7 @@ const getCurrentWeather = async () => {
 
 
 //forecast Data
-const getForecast = async () => {
+const getForecast = async (latitude, longitude) => {
     const forecastData = await WeatherApiClient.getForecast();
     debugger;
     const { daily } = forecastData;
@@ -97,7 +97,7 @@ const getWeatherStatus = (code) => {
     }
 }
 //hourly Data
-const gethourly = async () => {
+const gethourly = async (latitude, longitude) => {
     const hourlyData = await WeatherApiClient.gethourly();
     return {
         time: hourlyData.hourly.time,
@@ -105,7 +105,7 @@ const gethourly = async () => {
     }
 }
 
-const SunriseAndSunset = async () => {
+const SunriseAndSunset = async (latitude, longitude) => {
     const sunriseAndSunsetData = await WeatherApiClient.SunriseAndSunset();
     const { daily } = sunriseAndSunsetData;
     return {
@@ -114,7 +114,7 @@ const SunriseAndSunset = async () => {
     };
 }
 //precipitation Data
-const precipitationData = async () => {
+const precipitationData = async (latitude, longitude) => {
     const precipitation = await WeatherApiClient.getPrecipitation();
     return {
         precipitation: precipitation.daily.precipitation_sum[0] + "mm"

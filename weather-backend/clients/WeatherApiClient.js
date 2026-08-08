@@ -1,13 +1,13 @@
 const axios = require("axios");
 
-const getCurrentWeather = async () => {
+const getCurrentWeather = async (latitude, longitude) => {
     try {
         const response = await axios.get(
             "https://api.open-meteo.com/v1/forecast",
             {
                 params: {
-                    latitude: 30.0444,
-                    longitude: 31.2357,
+                    latitude,
+                    longitude,
                     current: "temperature_2m,relative_humidity_2m,wind_speed_10m"
                 }
             }
@@ -17,14 +17,14 @@ const getCurrentWeather = async () => {
         throw new Error("Failed to fetch current weather");
     }
 }
-const getForecast = async () => {
+const getForecast = async (latitude, longitude) => {
     try {
         const response = await axios.get(
             "https://api.open-meteo.com/v1/forecast",
             {
                 params: {
-                    latitude: 30.0444,
-                    longitude: 31.2357,
+                    latitude,
+                    longitude,
                     daily: "temperature_2m_max,temperature_2m_min,weather_code"
                 }
             }
@@ -36,14 +36,14 @@ const getForecast = async () => {
 }
 //hourly
 
-const gethourly = async () => {
+const gethourly = async (latitude, longitude) => {
     try {
         const response = await axios.get(
             "https://api.open-meteo.com/v1/forecast",
             {
                 params: {
-                    latitude: 30.0444,
-                    longitude: 31.2357,
+                    latitude,
+                    longitude,
                     hourly: "temperature_2m"
                 }
             }
@@ -55,14 +55,14 @@ const gethourly = async () => {
         throw new Error("Failed to fetch hourly weather");
     }
 }
-const SunriseAndSunset = async () => {
+const SunriseAndSunset = async (latitude, longitude) => {
     try {
         const response = await axios.get(
             "https://api.open-meteo.com/v1/forecast",
             {
                 params: {
-                    latitude: 30.0444,
-                    longitude: 31.2357,
+                    latitude,
+                    longitude,
                     daily: "sunrise,sunset"
                 }
             }
@@ -75,14 +75,14 @@ const SunriseAndSunset = async () => {
     }
 }
 //Precipitation
-const getPrecipitation = async () => {
+const getPrecipitation = async (latitude, longitude) => {
     try{
         const response = await axios.get(
             "https://api.open-meteo.com/v1/forecast",
             {
                 params: {
-                    latitude: 30.0444,
-                    longitude: 31.2357,
+                    latitude,
+                    longitude,
                     daily: "precipitation_sum"
                 }
             }
@@ -92,7 +92,6 @@ const getPrecipitation = async () => {
         throw new Error("Failed to fetch precipitation");
     }
 }
-
 
 module.exports = {
     getCurrentWeather,
