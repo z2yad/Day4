@@ -99,15 +99,18 @@ const getWeatherStatus = (code) => {
 //hourly Data
 const gethourly = async () => {
     const hourlyData = await WeatherApiClient.gethourly();
-    return hourlyData;
+    return {
+        time: hourlyData.hourly.time,
+        temperature: hourlyData.hourly.temperature_2m
+    }
 }
 
 const SunriseAndSunset = async () => {
     const sunriseAndSunsetData = await WeatherApiClient.SunriseAndSunset();
     const { daily } = sunriseAndSunsetData;
     return {
-        sunrise: daily.sunrise[0],
-        sunset: daily.sunset[0]
+        sunrise: daily.sunrise[0].split("T")[1],
+        sunset: daily.sunset[0].split("T")[1]
     };
 }
 //precipitation Data
