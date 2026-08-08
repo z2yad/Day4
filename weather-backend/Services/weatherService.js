@@ -114,7 +114,7 @@ const SunriseAndSunset = async () => {
 const precipitationData = async () => {
     const precipitation = await WeatherApiClient.getPrecipitation();
     return {
-        precipitation: precipitation.daily.precipitation_sum[0]
+        precipitation: precipitation.daily.precipitation_sum[0] + "mm"
     };
 }
 module.exports = {
